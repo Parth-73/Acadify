@@ -1,0 +1,106 @@
+/* index.css — plain CSS for Acadify prototype (responsive) */
+
+:root{
+  --bg1:#e6f7ff;
+  --bg2:#eafbe9;
+  --card:#ffffff;
+  --accent:#0b7db0;
+  --muted:#6b7f8e;
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:#072b36;
+}
+
+/* Top header */
+.topbar{
+  width:100%;
+  max-width:1100px;
+  margin:18px auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0ea5a4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;box-shadow:0 8px 24px rgba(11,125,176,0.12)}
+.title{font-size:16px;font-weight:700}
+.subtitle{color:var(--muted);font-size:13px}
+
+/* layout shell */
+.shell{
+  width:100%;
+  max-width:1100px;
+  margin:10px auto 80px;
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:18px;
+  align-items:start;
+  padding:0 12px;
+}
+
+/* sidebar */
+.sidebar{
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  padding:14px;
+  border-radius:var(--radius);
+  box-shadow:0 8px 24px rgba(7,24,40,0.06);
+  position:sticky; top:24px;
+}
+.navlist{list-style:none;padding:0;margin:0}
+.navlist li{margin:8px 0}
+.navlist a{display:block;padding:10px;border-radius:8px;text-decoration:none;color:#072b36;font-weight:600}
+.navlist a:hover{background:rgba(11,125,176,0.06)}
+
+/* main column */
+.main{min-height:60vh;padding:6px}
+
+/* utility */
+.page{width:100%}
+.pagecenter{display:flex;align-items:center;justify-content:center;height:70vh;padding:12px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(7,24,40,0.06);border:1px solid rgba(10,30,50,0.03)}
+.formcard{max-width:480px;width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.row{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:10px;border:1px solid rgba(10,30,50,0.03);margin-top:8px;background:linear-gradient(180deg,#fff,#fbfeff)}
+.tools{display:flex;gap:8px;align-items:center}
+.small{font-size:13px}
+.muted{color:var(--muted);font-size:13px}
+.title-lg{font-size:20px;font-weight:700;margin-bottom:8px}
+
+/* buttons & inputs */
+.btn{background:var(--accent);color:#fff;border:0;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+.btn:hover{opacity:0.95}
+.btn.ghost{background:transparent;border:1px solid rgba(7,24,40,0.06);color:var(--accent)}
+.btn.small{padding:6px 10px;font-size:13px;border-radius:8px}
+
+input, select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2}
+textarea{min-height:100px}
+
+/* progress */
+.progress{height:10px;background:#f0f6fb;border-radius:999px;overflow:hidden;margin-top:8px}
+.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#0ea5a4);width:0;transition:width 520ms ease}
+
+/* table */
+.table{width:100%;border-collapse:collapse}
+.table th{padding:8px;text-align:left;border-bottom:1px solid #f0f5f8}
+.table td{padding:8px;border-top:1px solid #f8fbfc}
+
+/* badges/errors */
+.badge{background:linear-gradient(90deg,var(--accent),#0ea5a4);color:#fff;padding:6px 9px;border-radius:999px;font-weight:700}
+.error{background:#ffe9ea;color:#8b1f26;padding:8px;border-radius:8px;margin-bottom:8px}
+.note{font-size:13px;color:var(--muted)}
+
+/* responsive */
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{position:relative;order:2}
+  .main{order:1}
+  .topbar{padding:10px}
+}
